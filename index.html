@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-3 || Programming Hero</title>
+
+    <!-- Added Taildwind and DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- End External CSS Link -->
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "coral-red": "#FF4240",
+              "black-russian": "#131318",
+              canary: "#13131899",
+              "deep-black": "#13131880",
+            },
+            fontSize: {
+              sm: "0.8rem",
+              base: "1rem",
+              "base-sm": "1.2rem",
+              md: "1.5rem",
+              xl: "1.75rem",
+              "3xl": "2.25rem",
+            },
+            width: {
+              96: "20.938rem",
+              232: "73.125rem",
+            },
+            height: {
+              132: "34.375rem",
+              72: "12.5rem",
+            },
+            backgroundImage: {
+              "hero-pattern": "url('/img/hero-pattern.svg')",
+              "footer-texture": "url('/img/footer-texture.png')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- <style type="text/tailwindcss">
+      @layer components {
+        .prof-image {
+          background-image: url("../images/4.png");
+          background-position: center;
+          background-size: cover;
+          background-color: red;
+        }
+      }
+    </style> -->
+  </head>
+  <body class="w-232 m-auto">
+    <!-- Header Start -->
+    <header class="m-auto lg:w-232 w-[375px] mb-14">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost lg:hidden pr-[0px]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="text-base hover:text-coral-red hover:bg-transparent"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="text-base hover:text-coral-red hover:bg-transparent"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="text-base hover:text-coral-red hover:bg-transparent"
+                  >Pages</a
+                >
+              </li>
+              <li>
+                <a class="text-base hover:text-coral-red hover:bg-transparent"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a class="text-base hover:text-coral-red hover:bg-transparent"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost lg:text-3xl text-2xl font-bold"
+            >Hockey<span class="text-coral-red">’</span>s</a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <a class="text-base hover:text-coral-red hover:bg-transparent"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="text-base hover:text-coral-red hover:bg-transparent"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="text-base hover:text-coral-red hover:bg-transparent"
+                >Pages</a
+              >
+            </li>
+            <li>
+              <a class="text-base hover:text-coral-red hover:bg-transparent"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a class="text-base hover:text-coral-red hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <button
+            class="btn btn-ghost btn-circle w-6 h-6 mr-6 hidden lg:visible"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_5_6)">
+                <path
+                  d="M3 10C3 10.9193 3.18106 11.8295 3.53284 12.6788C3.88463 13.5281 4.40024 14.2997 5.05025 14.9497C5.70026 15.5998 6.47194 16.1154 7.32122 16.4672C8.1705 16.8189 9.08075 17 10 17C10.9193 17 11.8295 16.8189 12.6788 16.4672C13.5281 16.1154 14.2997 15.5998 14.9497 14.9497C15.5998 14.2997 16.1154 13.5281 16.4672 12.6788C16.8189 11.8295 17 10.9193 17 10C17 9.08075 16.8189 8.1705 16.4672 7.32122C16.1154 6.47194 15.5998 5.70026 14.9497 5.05025C14.2997 4.40024 13.5281 3.88463 12.6788 3.53284C11.8295 3.18106 10.9193 3 10 3C9.08075 3 8.1705 3.18106 7.32122 3.53284C6.47194 3.88463 5.70026 4.40024 5.05025 5.05025C4.40024 5.70026 3.88463 6.47194 3.53284 7.32122C3.18106 8.1705 3 9.08075 3 10Z"
+                  stroke="#89898B"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 21L15 15"
+                  stroke="#89898B"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_5_6">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <a class="btn bg-coral-red border-lg text-white px-6 py-[15px]"
+            >Get Ticket</a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Start -->
+    <main class="mx-[14px]">
+      <section class="slider m-auto lg:w-232 lg:h-132 w-96 h-72 relative">
+        <div class="carousel rounded-2xl lg:w-232 lg:h-132 w-96 h-72">
+          <div id="slide1" class="carousel-item relative w-full">
+            <img
+              src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+              class="w-[335px] lg:w-full"
+            />
+            <div
+              class="absolute flex gap-4 transform lg:-translate-y-1/2 lg:left-5 lg:right-5 bottom-[10%] left-[33%]"
+            >
+              <a
+                href="#slide4"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❮</a
+              >
+              <a
+                href="#slide2"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❯</a
+              >
+            </div>
+          </div>
+          <div id="slide2" class="carousel-item relative w-full">
+            <img
+              src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+              class="w-[335px] lg:w-full"
+            />
+            <div
+              class="absolute flex gap-4 transform lg:-translate-y-1/2 lg:left-5 lg:right-5 bottom-[10%] left-[33%]"
+            >
+              <a
+                href="#slide1"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❮</a
+              >
+              <a
+                href="#slide3"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❯</a
+              >
+            </div>
+          </div>
+          <div id="slide3" class="carousel-item relative w-full">
+            <img
+              src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+              class="w-[335px] lg:w-full"
+            />
+            <div
+              class="absolute flex gap-4 transform lg:-translate-y-1/2 lg:left-5 lg:right-5 bottom-[10%] left-[33%]"
+            >
+              <a
+                href="#slide2"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❮</a
+              >
+              <a
+                href="#slide4"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❯</a
+              >
+            </div>
+          </div>
+          <div id="slide4" class="carousel-item relative w-full">
+            <img
+              src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+              class="w-[335px] lg:w-full"
+            />
+            <div
+              class="absolute flex gap-4 transform lg:-translate-y-1/2 lg:left-5 lg:right-5 bottom-[10%] left-[33%]"
+            >
+              <a
+                href="#slide3"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❮</a
+              >
+              <a
+                href="#slide1"
+                class="btn btn-neutral btn-circle text-white-500"
+                >❯</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="meet bg-black-russian rounded-2xl lg:w-[50%] lg:right-[5%] w-full lg:mt-0 mt-4 lg:p-8 p-4 lg:absolute z[9999] bottom-[10%] right-[20%]"
+        >
+          <h1 class="lg:text-md text-base-sm text-white">
+            Meet all the heroes from the field
+          </h1>
+          <p class="text-base text-[#ffffff99] pt-4 lg:w-[502px]">
+            Explore the champions of the field, where courage and skill unite.
+            Discover the unsung heroes making a difference every day.
+          </p>
+        </div>
+      </section>
+
+      <!-- Professional Club Section Start-->
+      <section class="club m-auto lg:mt-32 mt-64">
+        <div class="top-content text-center">
+          <h1 class="lg:text-3xl text-xl font-bold">
+            Professional Hockeys Club
+          </h1>
+          <p class="mt-8 m-auto lg:w-[607px] w-[292px] lg:text-base text-sm">
+            Unleash the thrill with our professional hockey club. Experience the
+            intensity, skill, and camaraderie that define our championship
+            journey.
+          </p>
+        </div>
+        <div
+          class="radial-progress lg:flex justify-around w-232 lg:mt-20 mt-[615px] mb-[232px]"
+        >
+          <div class="first text-center lg:mb-0 mb-12">
+            <div
+              class="radial-progress text-coral-red text-3xl"
+              style="--value: 87; --size: 10rem"
+              role="progressbar"
+            >
+              87%
+            </div>
+            <div class="text-center mt-8">
+              <h2 class="text-2xl font-bold mb-4">Prayer Facility</h2>
+              <p class="text-canary lg:w-full w-[250px] text-center m-auto">
+                Sacred space for serene reflection all seekers.
+              </p>
+            </div>
+          </div>
+
+          <div class="second text-center lg:mb-0 mb-12">
+            <div
+              class="radial-progress text-accent text-3xl"
+              style="--value: 95; --size: 10rem"
+              role="progressbar"
+            >
+              95%
+            </div>
+            <div class="text-center mt-8">
+              <h2 class="text-2xl font-bold mb-4">Experienced Coach</h2>
+              <p class="text-canary lg:w-full w-[250px] text-center m-auto">
+                Guiding success with expertise, our experienced coach.
+              </p>
+            </div>
+          </div>
+          <div class="third text-center lg:mb-0 mb-12">
+            <div
+              class="radial-progress text-warning text-3xl"
+              style="--value: 90; --size: 10rem"
+              role="progressbar"
+            >
+              90%
+            </div>
+            <div class="text-center mt-8">
+              <h2 class="text-2xl font-bold mb-4">Senior Player</h2>
+              <p class="text-canary lg:w-full w-[250px] text-center m-auto">
+                Seasoned veteran, our senior player embodies skill.
+              </p>
+            </div>
+          </div>
+          <div class="fourth text-center lg:mb-0 mb-12">
+            <div
+              class="radial-progress text-info text-3xl"
+              style="--value: 80; --size: 10rem"
+              role="progressbar"
+            >
+              80%
+            </div>
+            <div class="text-center mt-8">
+              <h2 class="text-2xl font-bold mb-4">Training Ground</h2>
+              <p class="text-canary lg:w-full w-[250px] text-center m-auto">
+                The hallowed ground where dedication meets excellence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Professional Club Section End-->
+
+      <!-- Program Section Start -->
+      <section class="program lg:mt-[332px] mt-[432px]">
+        <div class="p-top-content text-center mb-24">
+          <h1 class="text-3xl font-bold">Program Sections</h1>
+          <p class="text-canary lg:w-[607px] m-auto lg:mt-8 mt-4 w-[292px]">
+            Explore diverse program sections, each tailored to ignite curiosity,
+            foster growth, and inspire innovation. Unleash your potential with
+            us!
+          </p>
+        </div>
+
+        <div
+          class="grid-images flex lg:flex-row flex-col gap-8 mb-8 lg:w-full w-[335px] m-auto"
+        >
+          <div
+            class="flex-basis-1/2 relative bg-[url('/images/2.png')] bg-cover rounded-2xl lg:w-2/4 lg:h-[338px] h-[244px]"
+          >
+            <div
+              class="image-overlay lg:h-[338px] h-[244px] bg-deep-black rounded-2xl"
+            >
+              <div
+                class="images-content absolute bottom-[5%] lg:w-[495px] lg:pl-10 lg:pb-6 px-4 text-white"
+              >
+                <h1 class="lg:text-3xl text-xl font-bold lg:mb-4 mb-2">
+                  Junior Program
+                </h1>
+                <p class="lg:text-base text-[14px]">
+                  Nurturing young talents through our dynamic junior program.
+                  From skill-building to character development, we empower
+                  future leaders and achievers.
+                </p>
+                <button
+                  class="btn btn-error bg-coral-red text-white font-bold text-2xl mt-6"
+                >
+                  Register Now!
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-basis-1/2 relative bg-[url('/images/3.png')] bg-cover rounded-2xl lg:w-2/4 lg:h-[338px] h-[244px]"
+          >
+            <div
+              class="image-overlay lg:h-[338px] h-[244px] bg-deep-black rounded-2xl"
+            >
+              <div
+                class="images-content absolute bottom-[5%] lg:w-[495px] lg:pl-10 lg:pb-6 px-4 text-white"
+              >
+                <h1 class="lg:text-3xl text-md font-bold lg:mb-4 mb-2">
+                  Teenager Program
+                </h1>
+                <p class="lg:text-base text-[14px]">
+                  Nurturing young talents through our dynamic junior program.
+                  From skill-building to character development, we empower
+                  future leaders and achievers.
+                </p>
+                <button
+                  class="btn btn-error bg-coral-red text-white font-bold text-2xl mt-6"
+                >
+                  Register Now!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative bg-[url('/images/4.png')] bg-cover rounded-2xl lg:w-full lg:h-full w-[335px] h-[244px] m-auto"
+        >
+          <div
+            class="image-overlay lg:h-[550px] h-[244px] bg-deep-black rounded-2xl"
+          >
+            <div
+              class="images-content absolute bottom-[5%] lg:w-[495px] lg:pl-10 lg:pb-6 px-4 text-white"
+            >
+              <h1 class="text-3xl font-bold lg:mb-4 mb-2">
+                Professional Program
+              </h1>
+              <p class="lg:text-base text-[14px]">
+                Elevate your expertise in our professional program—tailored
+                training, strategic insights, and networking opportunities.
+                Propel your career to new heights.
+              </p>
+              <button
+                class="btn btn-error bg-coral-red text-white font-bold text-2xl mt-6"
+              >
+                Register Now!
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Program Section End -->
+
+      <!-- Products Section Start -->
+      <section class="products my-32">
+        <div class="product-top-content text-center">
+          <h1 class="lg:text-3xl text-xl font-bold">Our New Products</h1>
+          <p class="text-base m-auto lg:w-[607px] w-[292px] mt-6 text-canary">
+            Introducing cutting-edge innovations! Explore our new products,
+            designed for efficiency, style, and performance. Elevate your
+            experience with our latest offerings.
+          </p>
+        </div>
+        <div class="product-cards grid lg:grid-cols-2 grid-cols-1 gap-8 mt-20">
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/5.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">5.0</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">20</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">100</span>
+                </div>
+              </div>
+              <h2 class="card-title">World Cup Flags Football</h2>
+              <p class="my-4">
+                Flags fly as global talent graces the football pitch.
+              </p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $18.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/6.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">4.5</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">10</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">80</span>
+                </div>
+              </div>
+              <h2 class="card-title">Hockey's Power Play</h2>
+              <p>
+                Global Triumph: Hockey's Championship's Unforgettable Moments
+              </p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $22.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/7.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">5.0</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">25</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">120</span>
+                </div>
+              </div>
+              <h2 class="card-title">Cap For Hockeys</h2>
+              <p>Hockey's Finest Flaunt Their Cap, Skill Beyond Measure..</p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $32.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/8.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">4.0</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">15</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">50</span>
+                </div>
+              </div>
+              <h2 class="card-title">Cricket's Epic Battles</h2>
+              <p>Cricket's Valor Shines in Epic Battles, Fans Celebrate.</p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $25.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/9.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">4.5</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">30</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">120</span>
+                </div>
+              </div>
+              <h2 class="card-title">Cricket's Grand Stand</h2>
+              <p>Cricket's Elegance, Roars Define Grand Stand Spectacle.</p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $10.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card lg:card-side bg-base-100 rounder-2xl border-[1px] border-solid border-[#1313181a] lg:w-full w-[338px] m-auto"
+          >
+            <figure class="m-6 rounded-2xl">
+              <img
+                src="images/10.png"
+                alt="Album"
+                class="w-[220px] h-[172px] rounded-2xl"
+              />
+            </figure>
+            <div class="card-body lg:pr-1.5 px-4">
+              <div class="flex flex-row gap-8">
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-[#f99806]"
+                    viewBox="0 0 24 24"
+                    fill="#f99806"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">5.0</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <span class="text-canary text-base">40</span>
+                </div>
+                <div class="flex gap-4">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  <span class="text-canary text-base">200</span>
+                </div>
+              </div>
+              <h2 class="card-title">Football's Goal Frenzy</h2>
+              <p>
+                Spectacular Strikes, Cheers Echo: Football's Goal Frenzy
+                Delight!
+              </p>
+              <div class="flex items-center">
+                <p class="text-base-sm text-coral-red font-bold">
+                  Price - $15.00
+                </p>
+                <p class="text-canary flex flex-row">
+                  <svg
+                    class="h-6 w-6 text-canary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    /></svg
+                  ><span class="pl-2">Delivery Fee: Free</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Products Section End -->
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer></footer>
+    <!-- Footer End -->
+  </body>
+</html>
