@@ -13,6 +13,14 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Adding Font Awesome CSS Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Adding Font Awesome CSS Library End -->
+
     <!-- External CSS Link -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- End External CSS Link -->
@@ -43,27 +51,12 @@
               132: "34.375rem",
               72: "12.5rem",
             },
-            backgroundImage: {
-              "hero-pattern": "url('/img/hero-pattern.svg')",
-              "footer-texture": "url('/img/footer-texture.png')",
-            },
           },
         },
       };
     </script>
-
-    <!-- <style type="text/tailwindcss">
-      @layer components {
-        .prof-image {
-          background-image: url("../images/4.png");
-          background-position: center;
-          background-size: cover;
-          background-color: red;
-        }
-      }
-    </style> -->
   </head>
-  <body class="w-232 m-auto">
+  <body class="m-auto">
     <!-- Header Start -->
     <header class="m-auto lg:w-232 w-[375px] mb-14">
       <div class="navbar bg-base-100">
@@ -121,7 +114,8 @@
             </ul>
           </div>
           <a class="btn btn-ghost lg:text-3xl text-2xl font-bold"
-            >Hockey<span class="text-coral-red">’</span>s</a
+            >Hockey<span class="text-coral-red -ml-[6px]">’</span
+            ><span class="-ml-3">s</span></a
           >
         </div>
         <div class="navbar-center hidden lg:flex">
@@ -194,7 +188,7 @@
     <!-- Header End -->
 
     <!-- Main Start -->
-    <main class="mx-[14px]">
+    <main class="w-232 m-auto">
       <section class="slider m-auto lg:w-232 lg:h-132 w-96 h-72 relative">
         <div class="carousel rounded-2xl lg:w-232 lg:h-132 w-96 h-72">
           <div id="slide1" class="carousel-item relative w-full">
@@ -1118,11 +1112,189 @@
         </div>
       </section>
       <!-- Client QUestions Section End -->
+
+      <!-- Get in Touch Section Start -->
+      <section class="get-in-touch lg:w-[1170px] w-[375px] m-auto">
+        <div class="get-in-touch-top-content text-center">
+          <h1 class="lg:text-3xl text-xl font-bold">Get In Touch</h1>
+          <p class="text-base m-auto lg:w-[607px] w-[292px] mt-6 text-canary">
+            Connect with us today! Whether inquiries, collaborations, or
+            feedback, getting in touch fosters communication and strengthens our
+            shared journey.
+          </p>
+        </div>
+        <div
+          class="form mt-20 lg:flex lg:w-full w-[335px] gap-8 grid grid-cols-1 m-auto pb-8"
+        >
+          <div
+            class="info grid rounded-2xl border-[1px] border-solid border-[#1313181a] lg:px-8 px-6"
+          >
+            <div
+              class="rounded-2xl lg:w-[374px] lg:h-[216px] my-8 p-8 bg-[#bced6d1a]"
+            >
+              <img src="/images/Group 1171275317.png" alt="Phone Number" />
+              <div class="text-[#13131866] text-base-sm mt-8">Phone Number</div>
+              <div class="font-bold text-base-sm text-[#131318]">
+                (+62) 123-321-543
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl lg:w-[374px] lg:h-[216px] my-2 p-8 bg-[#bced6d1a]"
+            >
+              <img src="/images/Group 1171275318.png" alt="Email" />
+              <div class="text-[#13131866] text-base-sm mt-8">Email</div>
+              <div class="font-bold text-base-sm text-[#131318]">
+                hockeys@support.com
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl lg:w-[374px] lg:h-[216px] my-8 p-8 bg-[#629cf31a]"
+            >
+              <img src="/images/Group 1171275321.png" alt="Location" />
+              <div class="text-[#13131866] text-base-sm mt-8">Location</div>
+              <div class="font-bold text-base-sm text-[#131318]">
+                152/1 Mohakhali Wireless Gate
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <form class="">
+              <div class="grid lg:grid-cols-2 grid-cols gap-8">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Your Name</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    class="input input-bordered w-[324px] max-w-xs h-16 bg-[#13131808] placeholder:text-[#1313184d] placeholder:text-base-sm"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Your Email</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter your email"
+                    class="input input-bordered w-[324px] max-w-xs h-16 bg-[#13131808] placeholder:text-[#1313184d] placeholder:text-base-sm"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Subject</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter your subject"
+                    class="input input-bordered w-[324px] max-w-xs h-16 bg-[#13131808] placeholder:text-[#1313184d] placeholder:text-base-sm"
+                  />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Phone Number</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter your phone number"
+                    class="input input-bordered w-[324px] max-w-xs h-16 bg-[#13131808] placeholder:text-[#1313184d] placeholder:text-base-sm"
+                  />
+                </div>
+              </div>
+              <div class="mt-4">
+                <h3 class="text-xl font-bold mb-2">Message</h3>
+                <input
+                  type="text"
+                  placeholder="Enter your phone number"
+                  class="input input-bordered lg:w-[672px] w-full h-[370px] bg-[#13131808] placeholder:text-[#1313184d] placeholder:text-base-sm pb-[300px]"
+                />
+              </div>
+              <div class="mt-4">
+                <button
+                  class="btn bg-coral-red w-full text-white text-base-sm mt-8"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="social-media rounded-2xl text-center bg-[#13131808] h-[150px] py-[35px] lg:mx-0 mx-6"
+        >
+          <h2 class="text-xl font-bold">Social Media</h2>
+          <div class="social-media-icons flex gap-8 justify-center mt-4">
+            <i class="fa fa-twitter text-xl"></i>
+            <i class="fa fa-facebook text-xl"></i>
+            <i class="fa fa-instagram text-xl"></i>
+            <i class="fa fa-github text-xl"></i>
+          </div>
+        </div>
+      </section>
+      <!-- Get in Touch Section End -->
     </main>
     <!-- Main End -->
 
     <!-- Footer Start -->
-    <footer></footer>
+    <footer
+      class="lg:w-[1440px] w-[375px] lg:h-[454px] h-[869px] bg-[#131318] mt-20 lg:p-24 p-8 lg:translate-x-0 translate-x-[38%] m-auto"
+    >
+      <div
+        class="w-[1170px] w-[375px] lg:flex grid grid-cols lg:gap-32 gap-2 lg:justify-start justify-center lg:mx-16 lg:pr-0 pr-[28px]"
+      >
+        <div>
+          <div>
+            <h1 class="text-3xl text-white font-bold lg:ml-0 ml-8">
+              Get In Touch
+            </h1>
+            <p
+              class="lg:w-[346px] w-[297px] mb-[25px] text-[#ffffff99] mt-[18px] lg:pr-0 pr-[29px] lg:text-left text-center"
+            >
+              For queries, collaborations, or a chat, reach out. Let's connect
+              and explore possibilities together!
+            </p>
+            <div class="flex gap-2 mb-4 lg:justify-start justify-center mr-8">
+              <img src="/images/Frame.png" class="" />
+              <p class="text-[#ffffffcc]">hockeys@support.com</p>
+            </div>
+            <div class="flex gap-2 lg:justify-start justify-center mr-8">
+              <img src="/images/phone.png" class="text-[#ffffff99]" />
+              <p class="text-[#ffffffcc]">(+62) 123-321-543</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:flex grid grid-cols-2 lg:gap-44 gap-2 lg:mt-0 mt-8">
+          <div>
+            <h2 class="text-2xl text-white font-bold">Company</h2>
+            <ul class="text-[#ffffff99] mt-[29px]">
+              <li class="py-2">About us</li>
+              <li class="py-2">Leadership</li>
+              <li class="py-2">Careers</li>
+              <li class="py-2">News & Article</li>
+              <li class="py-2">Legal Notice</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl text-white font-bold">Support</h2>
+            <ul class="text-[#ffffff99] mt-[29px]">
+              <li class="py-2">Help Center</li>
+              <li class="py-2">FAQ</li>
+              <li class="py-2">Ticket Support</li>
+              <li class="py-2">Contact Us</li>
+            </ul>
+          </div>
+
+          <div
+            class="m-auto w-full lg:mt-0 lg:translate-x-0 translate-x-1/2 lg:w-[200px]"
+          >
+            <h2 class="text-2xl text-white font-bold">Services</h2>
+            <ul class="text-[#ffffff99] mt-[29px]">
+              <li class="py-2">Academy</li>
+              <li class="py-2">Group Lesson</li>
+              <li class="py-2">Private Lesson</li>
+              <li class="py-2">Hockey for kids</li>
+              <li class="py-2">Hockey for adults</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Footer End -->
   </body>
 </html>
